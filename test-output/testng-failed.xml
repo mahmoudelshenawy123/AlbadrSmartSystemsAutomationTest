@@ -5,8 +5,9 @@
     <classes>
       <class name="salesTests.OpenSalesPageTest">
         <methods>
-          <include name="paas"/>
+          <include name="addProductToBill"/>
           <include name="OpenAlbadrAlbadr"/>
+          <include name="assertProductDetailsTrue"/>
           <include name="openSalesPage"/>
         </methods>
       </class> <!-- salesTests.OpenSalesPageTest -->

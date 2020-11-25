@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17293" started-at="2020-11-21T16:00:49 EET" finished-at="2020-11-21T16:01:07 EET">
+  <suite name="Default suite" duration-ms="47609" started-at="2020-11-23T14:30:04 EET" finished-at="2020-11-23T14:30:52 EET">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17293" started-at="2020-11-21T16:00:49 EET" finished-at="2020-11-21T16:01:07 EET">
+    <test name="Default test" duration-ms="47609" started-at="2020-11-23T14:30:04 EET" finished-at="2020-11-23T14:30:52 EET">
       <class name="salesTests.OpenSalesPageTest">
-        <test-method status="PASS" signature="OpenAlbadrAlbadr()[pri:0, instance:salesTests.OpenSalesPageTest@2a17b7b6]" name="OpenAlbadrAlbadr" is-config="true" duration-ms="9944" started-at="2020-11-21T16:00:49 EET" finished-at="2020-11-21T16:00:59 EET">
+        <test-method status="PASS" signature="OpenAlbadrAlbadr()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="OpenAlbadrAlbadr" is-config="true" duration-ms="13589" started-at="2020-11-23T14:30:04 EET" finished-at="2020-11-23T14:30:18 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenAlbadrAlbadr -->
-        <test-method status="PASS" signature="openSalesPage()[pri:0, instance:salesTests.OpenSalesPageTest@2a17b7b6]" name="openSalesPage" duration-ms="7212" started-at="2020-11-21T16:00:59 EET" finished-at="2020-11-21T16:01:07 EET">
+        <test-method status="PASS" signature="openSalesPage()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="openSalesPage" duration-ms="24723" started-at="2020-11-23T14:30:18 EET" finished-at="2020-11-23T14:30:43 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openSalesPage -->
-        <test-method status="PASS" signature="paas()[pri:0, instance:salesTests.OpenSalesPageTest@2a17b7b6]" name="paas" duration-ms="106" started-at="2020-11-21T16:01:07 EET" finished-at="2020-11-21T16:01:07 EET">
+        <test-method status="PASS" signature="addProductToBill()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="addProductToBill" duration-ms="2613" started-at="2020-11-23T14:30:43 EET" depends-on-methods="salesTests.OpenSalesPageTest.openSalesPage" finished-at="2020-11-23T14:30:45 EET">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- paas -->
+        </test-method> <!-- addProductToBill -->
+        <test-method status="PASS" signature="assertProductDetailsTrue()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="assertProductDetailsTrue" duration-ms="6651" started-at="2020-11-23T14:30:45 EET" depends-on-methods="salesTests.OpenSalesPageTest.addProductToBill" finished-at="2020-11-23T14:30:52 EET">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertProductDetailsTrue -->
       </class> <!-- salesTests.OpenSalesPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

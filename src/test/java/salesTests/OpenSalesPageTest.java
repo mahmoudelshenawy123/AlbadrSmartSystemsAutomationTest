@@ -1,13 +1,19 @@
 package salesTests;
 
+
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.util.function.DoublePredicate;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import salesPages.HomePage;
 import salesPages.SalesObjectsPage;
@@ -15,39 +21,69 @@ import salesPages.SalesObjectsPage;
 public class OpenSalesPageTest extends SalesTestBase{
 	HomePage home;
 	SalesObjectsPage  salesobjects;
-	
+	public String[] val;
+
 	@Test
 	public void openSalesPage() throws InterruptedException {
 		home=new HomePage(driver);
 		home.OpenSalesPoint();
-		
 	}
-	@Test 
-	public void paas() throws AWTException {
-		WebElement prod=driver.findElement(By.xpath("//input[@id='autocomplete_sales']"));
-		prod.click();
-		Robot robot =new Robot();
-		robot.keyPress(KeyEvent.VK_W);
-		robot.keyRelease(KeyEvent.VK_W);
-		
-		//JavascriptExecutor js= (JavascriptExecutor)driver;
-//		js.executeScript("arguments[0].value='صنف غير شامل 2';",prod);
-		//prod.click();
-	//	prod.sendKeys(	"صنف غير شامل 2");
-		//*[@id="barcode"]//*[@id="autocomplete_sales"]
-//	@Test(dependsOnMethods = "openSalesPage")
-//	public void addProductToTheBill() throws InterruptedException {
-//		salesobjects=new SalesObjectsPage(driver);
-//		salesobjects.addProduct();
-//		Thread.sleep(2000);
-//		String productNameBeforeAddingToTheBill= salesobjects.productValuesBeforeAddingToTheBill[0];
-//		String productDetailsBeforeAddingToTheBill= salesobjects.productValuesBeforeAddingToTheBill[1];
-//		String productQuantityBeforeAddingToTheBill= salesobjects.productValuesBeforeAddingToTheBill[2];
-//		String productSellingPriceBeforeAddingToTheBill= salesobjects.productValuesBeforeAddingToTheBill[3];
-//		
-//		System.out.println(productNameBeforeAddingToTheBill+"\n"+productDetailsBeforeAddingToTheBill+"\n"
-//		+productQuantityBeforeAddingToTheBill+"\n"+productSellingPriceBeforeAddingToTheBill);
+	@Test(dependsOnMethods = "openSalesPage")
+	public void addProductToBill() throws InterruptedException, AWTException {
+		salesobjects=new SalesObjectsPage(driver);
+		val=salesobjects.addProduct();
+		Thread.sleep(2000);
+
+
 	}
-	
+
+
+	@Test(dependsOnMethods = "addProductToBill")
+	public void assertProductDetailsTrue() throws InterruptedException, AWTException {
+
+		String productNameTxtBeforeAddingToBill= val[0];
+		String productDetailsBeforeAddingToBillTxt= val[1];
+		String addedQuantityBeforeAddingToBill= val[2];
+		String productSellingPriceBeforeAddingToBillTxt= val[3];
+		System.out.println
+		("productNameTxtBeforeAddingToBill :"+productNameTxtBeforeAddingToBill+"\n"
+				+"productDetailsBeforeAddingToBillTxt :"+productDetailsBeforeAddingToBillTxt+"\n"
+				+"addedQuantityBeforeAddingToBill :"+addedQuantityBeforeAddingToBill+"\n"
+				+"productSellingPriceBeforeAddingToBillTxt :"+productSellingPriceBeforeAddingToBillTxt);
+
+		String productNameTxtAfterAddingToBill = salesobjects.sumbitAddingProductToBill()[0];
+		String productBillDescriptionAfterAddingTxt = salesobjects.sumbitAddingProductToBill()[1];
+		String addedQuantityAfterAddingToBill = salesobjects.sumbitAddingProductToBill()[2];
+		double addedQuantityAfterAddingToBillNum=Double.parseDouble(addedQuantityAfterAddingToBill);
+		String productSellingPriceAfterAddingToBillTxt = salesobjects.sumbitAddingProductToBill()[3];
+		double productSellingPriceAfterAddingToBillNum=Double.parseDouble(productSellingPriceAfterAddingToBillTxt);
+
+		String productTotalPriceOfTheProductTxt = salesobjects.sumbitAddingProductToBill()[4];
+
+		System.out.println
+		(productNameTxtAfterAddingToBill+"\n" 
+				+"productBillDescriptionAfterAddingTxt :"+productBillDescriptionAfterAddingTxt+"\n"
+				+"addedQuantityAfterAddingToBill :"+addedQuantityAfterAddingToBill+"\n"
+				+"productSellingPriceAfterAddingToBillTxt :"+productSellingPriceAfterAddingToBillTxt+"\n"
+				+"productTotalPriceOfTheProductTxt :"+productTotalPriceOfTheProductTxt);
+
+		salesobjects.saveBill();
+		Thread.sleep(6000);
+
+		Robot robot=new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		robot.keyRelease(KeyEvent.VK_ESCAPE);
+		SoftAssert softAssert=new SoftAssert();
+		softAssert.assertEquals(productNameTxtBeforeAddingToBill, productNameTxtAfterAddingToBill,"1");
+		softAssert.assertEquals(productDetailsBeforeAddingToBillTxt,productBillDescriptionAfterAddingTxt,"2");
+		softAssert.assertEquals(addedQuantityBeforeAddingToBill,addedQuantityAfterAddingToBill,"3");
+		softAssert.assertEquals(productSellingPriceBeforeAddingToBillTxt,productSellingPriceAfterAddingToBillTxt,"4");
+		softAssert.assertEquals(Double.parseDouble(productTotalPriceOfTheProductTxt), (addedQuantityAfterAddingToBillNum*productSellingPriceAfterAddingToBillNum));
+		System.out.println(addedQuantityAfterAddingToBillNum*productSellingPriceAfterAddingToBillNum);
+		softAssert.assertAll();
+
+	}
+
+
 
 }
