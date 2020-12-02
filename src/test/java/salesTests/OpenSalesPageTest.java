@@ -1,20 +1,10 @@
 package salesTests;
 
-
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.util.function.DoublePredicate;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import salesPages.HomePage;
 import salesPages.SalesObjectsPage;
 
@@ -68,7 +58,8 @@ public class OpenSalesPageTest extends SalesTestBase{
 				+"productTotalPriceOfTheProductTxt :"+productTotalPriceOfTheProductTxt);
 
 		salesobjects.saveBill();
-		Thread.sleep(6000);
+		Thread.sleep(10000);
+		
 
 		Robot robot=new Robot();
 		robot.keyPress(KeyEvent.VK_ESCAPE);

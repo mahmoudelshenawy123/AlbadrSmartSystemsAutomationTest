@@ -78,7 +78,7 @@ public class SalesObjectsPage extends SalesPageBase{
 	@FindBy(xpath = "//span[@id='order_disc']")WebElement billTotalnetPriceAddinTaxesTxt ; // the total price of the bill After adding additional values.
 	@FindBy(xpath = "//input[@id='payment']")WebElement amountOfPayiedMoneyTxt; // the amount of the money we paid
 	@FindBy(xpath = "//*[@id=\"submit\"]")WebElement SubmitBtn; // Create Bill Button
-
+	
 	public String[] billDetatils = {
 			billTotalPriceAddinTaxesTxt.getText()
 			,billTotalnetPriceAddinTaxesTxt.getText()
@@ -89,10 +89,11 @@ public class SalesObjectsPage extends SalesPageBase{
 	//****** page  details   ***********
 
 
-
 	
+	@FindBy(xpath="//*[@id=\"sales_show\"]/tr[2]/td")WebElement billNumberId;
 	public void saveBill() {
 		SubmitBtn.click();
+//		billNumberId.getText().substring(5);
 	}
 	// there are the values that we will send the test page to assert 
 

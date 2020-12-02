@@ -31,7 +31,7 @@ public class SalesTestBase {
 		loginBtn.click();	
 
 	}
-	
+//	@Test
 	public void PreConditions() throws InterruptedException  {
 		WebElement settingBtn= driver.findElement(By.xpath("//*[contains(text(),' الإعدادات')]"));
 		settingBtn.click();
@@ -40,15 +40,14 @@ public class SalesTestBase {
 		programSettingsBtn.click();
 		Thread.sleep(2000);
 
-		WebElement addingQuantityBtn=driver.findElement(By.xpath("//*[contains(text(),' إدخال')]"));
+		WebElement addingQuantityBtn=driver.findElement(By.xpath("//*[@id='enter_quant1']"));
 		addingQuantityBtn.click();
-
-		WebElement fixedAddingValuesBtn=driver.findElement(By.xpath("//*[@id='bill_add' and @value=0 ]"));
-		js.executeScript("arguments[0].click();",fixedAddingValuesBtn );
-//		fixedAddingValuesBtn.click();
+//		js.executeScript("arguments[0].click();", addingQuantityBtn);
+		WebElement fixedAddingValuesBtn=driver.findElement(By.xpath("//*[@id='bill_add' and @value='1' ]"));// this is no button
+		fixedAddingValuesBtn.click();
 
 		Thread.sleep(2000);
-		WebElement salesScreenBtn =driver.findElement(By.xpath("//*[@id='screen_type1 and @value=1"));
+		WebElement salesScreenBtn =driver.findElement(By.xpath("//*[@id='screen_type1' and @value='1']"));  //this is choose button 
 		salesScreenBtn.click();
 		
 		Thread.sleep(2000);

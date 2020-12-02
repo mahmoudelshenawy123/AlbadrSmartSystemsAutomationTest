@@ -3,14 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="salesTests.OpenSalesPageTest">
+      <class name="salesTests.SalesTestBase">
         <methods>
-          <include name="addProductToBill"/>
+          <include name="PreConditions"/>
           <include name="OpenAlbadrAlbadr"/>
-          <include name="assertProductDetailsTrue"/>
-          <include name="openSalesPage"/>
         </methods>
-      </class> <!-- salesTests.OpenSalesPageTest -->
+      </class> <!-- salesTests.SalesTestBase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
