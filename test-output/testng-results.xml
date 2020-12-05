@@ -1,28 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="3" failed="1" ignored="0" total="4" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33415" started-at="2020-11-30T10:50:47 EET" finished-at="2020-11-30T10:51:20 EET">
+  <suite name="Default suite" duration-ms="26886" started-at="2020-12-05T14:37:55 EET" finished-at="2020-12-05T14:38:21 EET">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="33415" started-at="2020-11-30T10:50:47 EET" finished-at="2020-11-30T10:51:20 EET">
+    <test name="Default test" duration-ms="26886" started-at="2020-12-05T14:37:55 EET" finished-at="2020-12-05T14:38:21 EET">
       <class name="salesTests.OpenSalesPageTest">
-        <test-method status="PASS" signature="OpenAlbadrAlbadr()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="OpenAlbadrAlbadr" is-config="true" duration-ms="9214" started-at="2020-11-30T10:50:47 EET" finished-at="2020-11-30T10:50:56 EET">
+        <test-method status="PASS" signature="OpenAlbadrAlbadr()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="OpenAlbadrAlbadr" is-config="true" duration-ms="9157" started-at="2020-12-05T14:37:55 EET" finished-at="2020-12-05T14:38:04 EET">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenAlbadrAlbadr -->
-        <test-method status="PASS" signature="openSalesPage()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="openSalesPage" duration-ms="10066" started-at="2020-11-30T10:50:56 EET" finished-at="2020-11-30T10:51:06 EET">
+        <test-method status="FAIL" signature="openSalesPage()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="openSalesPage" duration-ms="17664" started-at="2020-12-05T14:38:04 EET" finished-at="2020-12-05T14:38:21 EET">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[element not interactable
+  (Session info: chrome=87.0.4280.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-2K99QJR', ip: '192.168.20.47', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\Hamza\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50855}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 2d1616da173cebbda86c7aba6482f11c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=87.0.4280.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-2K99QJR', ip: '192.168.20.47', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_261'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\Hamza\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50855}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 2d1616da173cebbda86c7aba6482f11c
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at com.sun.proxy.$Proxy8.click(Unknown Source)
+at salesPages.HomePage.OpenSalesPoint(HomePage.java:25)
+at salesTests.OpenSalesPageTest.openSalesPage(OpenSalesPageTest.java:23)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openSalesPage -->
-        <test-method status="PASS" signature="addProductToBill()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="addProductToBill" duration-ms="3509" started-at="2020-11-30T10:51:06 EET" depends-on-methods="salesTests.OpenSalesPageTest.openSalesPage" finished-at="2020-11-30T10:51:09 EET">
+        <test-method status="SKIP" signature="addProductToBill()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="addProductToBill" duration-ms="0" started-at="2020-12-05T14:38:21 EET" depends-on-methods="salesTests.OpenSalesPageTest.openSalesPage" finished-at="2020-12-05T14:38:21 EET">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method OpenSalesPageTest.addProductToBill()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method OpenSalesPageTest.addProductToBill()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addProductToBill -->
-        <test-method status="PASS" signature="assertProductDetailsTrue()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="assertProductDetailsTrue" duration-ms="10585" started-at="2020-11-30T10:51:09 EET" depends-on-methods="salesTests.OpenSalesPageTest.addProductToBill" finished-at="2020-11-30T10:51:20 EET">
+        <test-method status="SKIP" signature="assertProductDetailsTrue()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="assertProductDetailsTrue" duration-ms="0" started-at="2020-12-05T14:38:21 EET" depends-on-methods="salesTests.OpenSalesPageTest.addProductToBill" finished-at="2020-12-05T14:38:21 EET">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method OpenSalesPageTest.assertProductDetailsTrue()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method OpenSalesPageTest.assertProductDetailsTrue()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- assertProductDetailsTrue -->
+        <test-method status="SKIP" signature="assertSentDataToTreasuryPageIsTrue()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49]" name="assertSentDataToTreasuryPageIsTrue" duration-ms="0" started-at="2020-12-05T14:38:21 EET" depends-on-methods="salesTests.OpenSalesPageTest.assertProductDetailsTrue" finished-at="2020-12-05T14:38:21 EET">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method OpenSalesPageTest.assertSentDataToTreasuryPageIsTrue()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method OpenSalesPageTest.assertSentDataToTreasuryPageIsTrue()[pri:0, instance:salesTests.OpenSalesPageTest@614ddd49] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assertSentDataToTreasuryPageIsTrue -->
       </class> <!-- salesTests.OpenSalesPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

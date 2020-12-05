@@ -12,6 +12,7 @@ public class HomePage extends SalesPageBase{
 	
 	@FindBy(xpath="//*[contains(text(),'المبيعات')]")WebElement SalesSideNavBarBtn;
 	@FindBy(xpath="//*[contains(text(),' نقطة  البيع ')]")WebElement SellingPointBtn;
+	@FindBy(xpath="//*[contains(text(),'   الدرج اليوم ')]") WebElement dailyTreasuryBtn;
 //	@FindBy(xpath="")WebElement ;
 //	@FindBy(xpath="")WebElement ;
 //	@FindBy(xpath="")WebElement ;
@@ -22,6 +23,11 @@ public class HomePage extends SalesPageBase{
 	public void OpenSalesPoint() throws InterruptedException {
 		SalesSideNavBarBtn.click();
 		SellingPointBtn.click();
+	}
+	
+	public void openDailyTreasuryPage() {
+		SalesSideNavBarBtn.click();
+		dailyTreasuryBtn.click();		
 	}
 	
 	

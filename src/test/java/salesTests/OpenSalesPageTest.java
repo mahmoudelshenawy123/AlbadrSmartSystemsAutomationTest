@@ -3,6 +3,9 @@ package salesTests;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import salesPages.HomePage;
@@ -11,6 +14,7 @@ import salesPages.SalesObjectsPage;
 public class OpenSalesPageTest extends SalesTestBase{
 	HomePage home;
 	SalesObjectsPage  salesobjects;
+	CheckTheDataGoesToDailyTreasuryTest treasuryTest;
 	public String[] val;
 
 	@Test
@@ -18,18 +22,19 @@ public class OpenSalesPageTest extends SalesTestBase{
 		home=new HomePage(driver);
 		home.OpenSalesPoint();
 	}
+
+
 	@Test(dependsOnMethods = "openSalesPage")
 	public void addProductToBill() throws InterruptedException, AWTException {
-		salesobjects=new SalesObjectsPage(driver);
-		val=salesobjects.addProduct();
+		salesobjects = new SalesObjectsPage(driver);
+		val = salesobjects.addProduct();
 		Thread.sleep(2000);
-
-
 	}
 
 
 	@Test(dependsOnMethods = "addProductToBill")
 	public void assertProductDetailsTrue() throws InterruptedException, AWTException {
+
 
 		String productNameTxtBeforeAddingToBill= val[0];
 		String productDetailsBeforeAddingToBillTxt= val[1];
@@ -59,7 +64,7 @@ public class OpenSalesPageTest extends SalesTestBase{
 
 		salesobjects.saveBill();
 		Thread.sleep(10000);
-		
+
 
 		Robot robot=new Robot();
 		robot.keyPress(KeyEvent.VK_ESCAPE);
@@ -72,6 +77,18 @@ public class OpenSalesPageTest extends SalesTestBase{
 		softAssert.assertEquals(Double.parseDouble(productTotalPriceOfTheProductTxt), (addedQuantityAfterAddingToBillNum*productSellingPriceAfterAddingToBillNum));
 		System.out.println(addedQuantityAfterAddingToBillNum*productSellingPriceAfterAddingToBillNum);
 		softAssert.assertAll();
+
+	}
+
+	@Test(dependsOnMethods = "assertProductDetailsTrue")
+	public void assertSentDataToTreasuryPageIsTrue(){
+		WebElement SalesSideBtn = driver.findElement(By.xpath("//*[contains(text(),'المبيعات ')]"));
+		SalesSideBtn.click();
+		WebElement treasuryPageBtn = driver.findElement(By.xpath("//*[contains(text(),'   الدرج اليوم ')]"));
+		
+		treasuryPageBtn.click();
+		treasuryTest = new CheckTheDataGoesToDailyTreasuryTest();
+		treasuryTest.assertDataIstrueInTreasuryPage(driver);
 
 	}
 
